@@ -33,6 +33,7 @@ namespace WpfApp1
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
             int length;
+            int counter=0;
             if (!int.TryParse(lengthTextBox.Text, out length) || length <= 0)
             {
                 MessageBox.Show("Please enter a valid positive integer for password length.");
@@ -43,6 +44,17 @@ namespace WpfApp1
             bool includeUppercase = uppercaseCheckBox.IsChecked == true;
             bool includeNumbers = numbersCheckBox.IsChecked == true;
             bool includeSpecialChars = specialCharsCheckBox.IsChecked == true;
+
+            if(includeLowercase) counter++;
+            if(includeUppercase) counter++;
+            if(includeNumbers) counter++;
+            if(includeSpecialChars) counter++;
+
+            if(length<counter)
+            {
+                MessageBox.Show("Password length should be greater than or equal to the number of selected character types.");
+                return;
+            }
 
             if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars)
             {

@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Label Content="Password Length:" Grid.Row="0" Margin="10"/>
-        <TextBox x:Name="lengthTextBox" Grid.Row="0" Grid.Column="1" Margin="10"/>
+        <TextBox x:Name="lengthTextBox" Grid.Row="0" Grid.Column="1" Margin="10" Text=""/>
 
         <CheckBox x:Name="lowercaseCheckBox" Content="Include Lowercase Characters" Grid.Row="1" Margin="10"/>
         <CheckBox x:Name="uppercaseCheckBox" Content="Include Uppercase Characters" Grid.Row="2" Margin="10"/>
